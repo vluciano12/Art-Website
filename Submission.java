@@ -5,7 +5,7 @@ public class Submission {
     private int year;
     private String user;
     private String type;
-    private ArrayList<String> comments;
+    private ArrayList<String> comments = new ArrayList<String>();
     private int cmmtAmt;
 
     public Submission(){
@@ -13,7 +13,6 @@ public class Submission {
         year = 0;
         user = "N/A";
         type = "N/A";
-        comments = new ArrayList<String>();
         cmmtAmt = 0;
     }
 
