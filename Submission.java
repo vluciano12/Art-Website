@@ -1,14 +1,20 @@
+import java.util.ArrayList;
+
 public class Submission {
     private String name;
     private int year;
     private String user;
     private String type;
+    private ArrayList<String> comments;
+    private int cmmtAmt;
 
     public Submission(){
         name = "N/A";
         year = 0;
         user = "N/A";
         type = "N/A";
+        comments = new ArrayList<String>();
+        cmmtAmt = 0;
     }
 
     public Submission(String n, int y, String u, String t){
@@ -16,6 +22,8 @@ public class Submission {
         year = y;
         user = u;
         type = t;
+        comments = new ArrayList<String>();
+        cmmtAmt = 0;
     }
 
     public String getName() {
@@ -64,5 +72,16 @@ public class Submission {
         return name.equals(submission.name) && year == submission.year && user.equals(submission.user) && type.equals(submission.type);
     }
 
-    
+    public void addComment(String u, String c){
+        comments.add(u + ": " + c);
+        cmmtAmt++;
+    }
+
+    public void printComments(){
+        System.out.println("There are " + cmmtAmt + " comments.");
+        for(String cur : comments){
+            System.out.println(cur);
+        }
+    }
+
 }
